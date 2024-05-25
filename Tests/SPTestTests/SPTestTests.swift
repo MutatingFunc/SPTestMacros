@@ -3,10 +3,23 @@ import XCTest
 
 final class SPTestTests: XCTestCase {
     func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+        
     }
 }
+
+//func myTask(_ input: Int) async throws -> String {
+//    String(input)
+//}
+//
+//#Preview("Tests") {
+//    TestPlan {
+//        Test("TestThing") {
+//            let input = 1
+//            let result = try await myTask(input)
+//            print(result)
+//            assert(result)
+//            
+//            try unwrap(Int?.some(2))
+//        }
+//    }
+//}
