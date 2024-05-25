@@ -5,13 +5,10 @@ import PackageDescription
 import CompilerPluginSupport
 
 let package = Package(
-    name: "SPTest",
+    name: "SPTestMacros",
     platforms: [.macOS(.v14), .iOS(.v17), .tvOS(.v17), .watchOS(.v10), .macCatalyst(.v17)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "SPTest",
-            targets: ["SPTest"]),
         .library(
             name: "SPTestMacros",
             targets: ["SPTestMacros"]
@@ -22,16 +19,12 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0")
+        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0"),
+        .package(url: "https://github.com/MutatingFunc/SPTest.git", from: "1.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "SPTest"),
-        .testTarget(
-            name: "SPTestTests",
-            dependencies: ["SPTest"]),
         // Macro implementation that performs the source transformation of a macro.
         .macro(
             name: "SPTestMacrosMacros",

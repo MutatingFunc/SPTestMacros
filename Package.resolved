@@ -1,6 +1,15 @@
 {
-  "originHash" : "40a6e2e98e12026862f66224228cc3e364576420e63494c40220b34c69e38673",
+  "originHash" : "81f08fef7c3c808ca7a63d9d067cdba5c505c95250b88da1697a7bd90985688a",
   "pins" : [
+    {
+      "identity" : "sptest",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MutatingFunc/SPTest.git",
+      "state" : {
+        "revision" : "9fc8ab9b8bb9b1e06ccabd66ff5885c19d084346",
+        "version" : "1.0.0"
+      }
+    },
     {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
