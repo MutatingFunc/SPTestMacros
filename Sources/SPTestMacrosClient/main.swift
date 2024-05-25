@@ -7,10 +7,12 @@ let b = 25
 
 try #SPAssert(a + b == 42)
 
-#TestPlan("Example") {
-    Test("Test") {
-        print("Running")
-        try #SPAssert(true)
-        let i = try #SPUnwrap(2)
+#Preview("Example") {
+    TestPlan {
+        Test("Test") {
+            print("Running")
+            try #SPAssert(true)
+            let i = try #SPUnwrap(2)
+        }
     }
 }

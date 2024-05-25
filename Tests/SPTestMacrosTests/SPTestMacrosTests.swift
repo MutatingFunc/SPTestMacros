@@ -9,7 +9,7 @@ import XCTest
 import SPTestMacrosMacros
 
 let testMacros: [String: Macro.Type] = [
-    "stringify": StringifyMacro.self,
+    "SPAssert": SPAssertMacro.self,
 ]
 #endif
 
@@ -18,10 +18,10 @@ final class SPTestMacrosTests: XCTestCase {
         #if canImport(SPTestMacrosMacros)
         assertMacroExpansion(
             """
-            #stringify(a + b)
+            #SPAssert(a + b)
             """,
             expandedSource: """
-            (a + b, "a + b")
+            SPAssert(a + b, "a + b")
             """,
             macros: testMacros
         )
@@ -34,10 +34,10 @@ final class SPTestMacrosTests: XCTestCase {
         #if canImport(SPTestMacrosMacros)
         assertMacroExpansion(
             #"""
-            #stringify("Hello, \(name)")
+            #SPAssert("Hello, \(name)")
             """#,
             expandedSource: #"""
-            ("Hello, \(name)", #""Hello, \(name)""#)
+            SPAssert("Hello, \(name)", #""Hello, \(name)""#)
             """#,
             macros: testMacros
         )
